@@ -16,7 +16,7 @@ app.post("/lark-webhook", (req, res) => {
     console.log("==== DATA DARI LARK ====");
     console.log(req.body);
 
-    // HARUS ADA INI
+    // --- Challenge Verification ---
     if (req.body.type === "url_verification") {
         console.log("Mengirim challenge ke Lark:", req.body.challenge);
         return res.status(200).json({ challenge: req.body.challenge });
